@@ -60,6 +60,26 @@ async fn test_initialize_governance() {
         recent_blockhash,
     );
 
+    name: Socode CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - run: cargo build
+      - run: cargo test
+)}
+    $SOCODE
+    )}
+
     banks_client
         .process_transaction(transaction)
         .await
